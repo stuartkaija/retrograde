@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import './Card.scss';
 
 const inRetrogradeArray: string[] = [
@@ -41,7 +41,6 @@ export default function Card() {
 
     // api call to mercury in retrograde, update sentence based on response
     function clickHandler() {
-        console.log('api call running')
 		fetch('https://mercuryretrogradeapi.com')
             .then(res => res.json())
             .then(data => {
@@ -51,7 +50,10 @@ export default function Card() {
                     setSentence(getRandomString(notInRetrogradeArray));
                 }
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err);
+                alert('Something went wrong! (Mercury is probably in Retrograde but I cannot confirm that right now.)');
+            });
         }
 
     return (
