@@ -1,10 +1,36 @@
 .card {
     position: absolute;
+    height: 12rem;
+    width: 25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(240, 248, 255, .6);
-    padding: 3rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
+    justify-content: space-around;
+    background-color: rgba(240, 248, 255, .8);
+    padding: 1rem;
+    border-radius: 0.2rem;
+
+    &__title {
+        margin: 0;
+    }
+
+    &__button {
+        width: 6rem;
+        height: 2rem;
+        border-radius: 1rem;
+        border: 0rem;
+        background-color: blueviolet;
+        color: antiquewhite;
+
+        &:hover {
+            background-color: antiquewhite;
+            color: blueviolet;
+        }
+    }
+
+    &__response {
+        margin: 0;
+        font-weight: bold;
+        text-align: center;
+    }
 }
